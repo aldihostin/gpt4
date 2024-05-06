@@ -5,11 +5,11 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.static('public'));
 
-app.get('/gpt4', async (req, res) => {
+app.get('/openai', async (req, res) => {
   const { text } = req.query;
   
   try {
-    const response = await fetch(`https://aemt.me/gpt4?text=${encodeURIComponent(text)}`);
+    const response = await fetch(`https://aemt.me/openai?text=${encodeURIComponent(text)}`);
     const json = await response.json();
     res.json(json);
   } catch (error) {
