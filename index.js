@@ -8,14 +8,9 @@ app.use(express.static('public'));
 app.get('/openai', async (req, res) => {
   const { text } = req.query;
   
-  try {
     const response = await fetch(`https://aemt.me/openai?text=${encodeURIComponent(text)}`);
     const json = await response.json();
-    res.json(json);
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: 'Terjadi kesalahan saat mencari jawaban.' });
-  }
+    res.json(json)
 });
 
 app.listen(PORT, () => {
