@@ -12,7 +12,7 @@ async function searchAnswer() {
   const json = response.json()
     const data = json.result;
     
-    answerDiv.innerText = `${data}`;
+    answerDiv.innerText = json.result;
   } catch (error) {
     console.error(error);
     answerDiv.innerText = 'Terjadi kesalahan .';
