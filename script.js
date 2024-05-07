@@ -9,8 +9,10 @@ async function searchAnswer() {
   
   try {
     const response = await fetch(`/openai?text=${encodeURIComponent(question)}`);
-  const kocak = response.result;
-    answerDiv.innerText : kocak;
+  const json = response.json()
+    const data = json.result;
+    
+    answerDiv.innerText = `${data}`;
   } catch (error) {
     console.error(error);
     answerDiv.innerText = 'Terjadi kesalahan .';
