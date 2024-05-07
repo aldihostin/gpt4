@@ -68,7 +68,7 @@
     <script>
         function getAnswer() {
             var question = document.getElementById("question").value;
-            fetch('https://aemt.me/gemini?text=' + encodeURIComponent(question))
+            fetch('https://aemt.me/gemini?text=' + encodeURIComponent(question.trim()))
             .then(response => response.json())
             .then(data => {
                 document.getElementById("answer").innerText = data.result;
