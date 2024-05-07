@@ -10,7 +10,7 @@ app.get('/openai', async (req, res) => {
   
     const response = await fetch(`https://aemt.me/openai?text=${encodeURIComponent(text)}`);
     const json = await response.json();
-    res.json(json.result)
+    res.json(json)
 });
 
 app.listen(PORT, () => {
