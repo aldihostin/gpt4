@@ -8,7 +8,7 @@ async function searchAnswer() {
   const answerDiv = document.getElementById('answer');
   
   try {
-    const response = await fetch(`/openai?text=${encodeURIComponent(question)}`);
+    const response = await fetch(`https://aemt.me/gemini?text=${encodeURIComponent(question)}`);
   const json = response.json()
     const data = json.result;
     
